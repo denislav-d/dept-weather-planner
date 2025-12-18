@@ -85,3 +85,29 @@ export async function getForecast(): Promise<ForecastResponse> {
   }
   return await res.json();
 }
+
+export interface SubscribeResponse {
+  success?: boolean;
+  error?: string;
+}
+
+export async function postSubscribe(email: string): Promise<SubscribeResponse> {
+  const requestBody = { email };
+
+  const res = await fetch(`${BASE_URL}/post-subscribe`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!res.ok) {
+    const errorData = await res.json();
+    return { error: errorData.error || "Invalid email address" };
+  }
+
+  const successData = await res.json();
+
+  return successData;
+}

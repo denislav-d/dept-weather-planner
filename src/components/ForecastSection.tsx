@@ -2,11 +2,12 @@ import { ForecastResponse } from "@/lib/api";
 import { FahrenheitToCelsius, formatDate, formatWindDirection } from "@/utils/utils";
 import { formatWeatherIcon } from "@/utils/weather-icon";
 import Image from "next/image";
+import Form from "./Form";
 
 export default function ForecastSection({ forecast }: { forecast: ForecastResponse }) {
     return (
-        <section className="col-span-full md:col-span-6 py-5 gap-y-17.5 grid grid-cols-6 max-md:px-5 gap-x-3 bg-[#F2F2F2] text-black md:pl-8 lg:pl-16 xl:pl-20 2xl:pl-32 row-span-1">
-            <div className="flex flex-col gap-y-6 pt-24 col-span-full lg:col-span-5">
+        <section className="col-span-full md:col-span-6 py-5 gap-y-14 grid grid-cols-6 max-md:px-5 gap-x-3 bg-[#F2F2F2] text-black md:pl-8 lg:pl-16 xl:pl-20 2xl:pl-32 row-span-1">
+            <div className="flex flex-col gap-y-6 pt-10 md:pt-24 col-span-full lg:col-span-5">
                 <h5 className="font-semibold">Upcoming 5 days</h5>
 
                 <ul className="flex flex-col gap-y-2">
@@ -35,6 +36,8 @@ export default function ForecastSection({ forecast }: { forecast: ForecastRespon
                     ))}
                 </ul>
             </div>
+
+            <Form />
         </section>
     );
 }
