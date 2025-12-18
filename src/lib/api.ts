@@ -30,6 +30,35 @@ export interface ActivitiesResponse {
   ];
 }
 
+export interface ForecastResponse {
+  forecast: [
+    {
+      date: string;
+      condition: {
+        description: string;
+        icon:
+          | "overcast"
+          | "light-rain"
+          | "cloudy"
+          | "partly-cloudy"
+          | "hail"
+          | "heavy-rain"
+          | "thunderstorm"
+          | "snow"
+          | "heavy-snow"
+          | "fog"
+          | "sunny"
+          | "clear";
+      };
+      minTemp: number;
+      maxTemp: number;
+      metric: "CELCIUS" | "FAHRENHEIT";
+      windDirection: "N" | "NE" | "E" | "SE" | "S" | "SW" | "W" | "NW";
+      precipitation: number;
+    }
+  ];
+}
+
 export async function getWeather(): Promise<WeatherResponse> {
   const res = await fetch(`${BASE_URL}/get-weather`);
 
@@ -44,6 +73,15 @@ export async function getActivities(): Promise<ActivitiesResponse> {
 
   if (!res.ok) {
     throw new Error("Failed to fetch activities");
+  }
+  return await res.json();
+}
+
+export async function getForecast(): Promise<ForecastResponse> {
+  const res = await fetch(`${BASE_URL}/get-forecast`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch forecast");
   }
   return await res.json();
 }
