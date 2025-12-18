@@ -15,11 +15,35 @@ export interface WeatherResponse {
   ];
 }
 
+export interface ActivitiesResponse {
+  activities: [
+    {
+      title: string;
+      shortDescription: string;
+      description: string;
+      minTemp: number;
+      maxTemp: number;
+      id: string;
+      images: string[];
+      mainImageUrl: string;
+    }
+  ];
+}
+
 export async function getWeather(): Promise<WeatherResponse> {
   const res = await fetch(`${BASE_URL}/get-weather`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch weather");
+  }
+  return await res.json();
+}
+
+export async function getActivities(): Promise<ActivitiesResponse> {
+  const res = await fetch(`${BASE_URL}/get-things-to-do`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch activities");
   }
   return await res.json();
 }
