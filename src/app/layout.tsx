@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -24,6 +25,7 @@ export default function RootLayout({
         className={`${lato.variable} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
