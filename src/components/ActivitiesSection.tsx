@@ -2,12 +2,20 @@ import ActivityCard from "@/components/ActivityCard";
 import { WeatherResponse, ActivitiesResponse } from "@/lib/api";
 import { FahrenheitToCelsius } from "@/utils/utils";
 
-export default function RightSection({ weather, activities }: { weather: WeatherResponse, activities: ActivitiesResponse }) {
+export default function ActivitiesSection({ weather, activities }: { weather: WeatherResponse, activities: ActivitiesResponse }) {
     const { temperature, weatherInfo } = weather;
 
-    const suitableActivities = activities.activities.filter((activity) => activity.minTemp <= temperature.temp && activity.maxTemp >= temperature.temp);
+    const suitableActivities = activities.activities.filter((activity) => {
+        if (activity.minTemp === null || activity.maxTemp === null) return true;
 
-    const unsuitableActivities = activities.activities.filter((activity) => activity.minTemp > temperature.temp || activity.maxTemp < temperature.temp);
+        return activity.minTemp <= temperature.temp && activity.maxTemp >= temperature.temp;
+    });
+
+    const unsuitableActivities = activities.activities.filter((activity) => {
+        if (activity.minTemp === null || activity.maxTemp === null) return false;
+
+        return activity.minTemp > temperature.temp || activity.maxTemp < temperature.temp;
+    });
 
     return (
         <section className="col-span-full max-md:pb-12 md:pt-7.5 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8 py-5 gap-y-7.5 md:gap-y-12.5 max-md:px-5 flex flex-col bg-white text-black max-md:order-last md:pr-8 lg:pr-16 xl:pr-20 2xl:pr-32 row-span-2">
@@ -24,7 +32,7 @@ export default function RightSection({ weather, activities }: { weather: Weather
                     <h5 className="font-semibold">Some things you could do:</h5>
 
                     {suitableActivities.map((activity) => (
-                        <ActivityCard key={activity.id} {...activity} />
+                        <ActivityCard key={activity.id} activity={activity} suitable />
                     ))}
                 </ul>
             )}
@@ -34,7 +42,7 @@ export default function RightSection({ weather, activities }: { weather: Weather
                     <h5 className="font-semibold">Some things you should not do:</h5>
 
                     {unsuitableActivities.map((activity) => (
-                        <ActivityCard key={activity.id} {...activity} />
+                        <ActivityCard key={activity.id} activity={activity} suitable={false} />
                     ))}
                 </ul>
             )}

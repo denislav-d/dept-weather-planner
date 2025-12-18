@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/utils/utils";
 
-export default function LeftSection() {
+export default function IntroductionSection() {
     const [readMoreOpen, setReadMoreOpen] = useState(false);
 
     return (

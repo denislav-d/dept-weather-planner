@@ -21,8 +21,8 @@ export interface ActivitiesResponse {
       title: string;
       shortDescription: string;
       description: string;
-      minTemp: number;
-      maxTemp: number;
+      minTemp: number | null;
+      maxTemp: number | null;
       id: string;
       images: string[];
       mainImageUrl: string;
