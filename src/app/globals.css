@@ -40,5 +40,5 @@ h6 {
 }
 
 p {
-  @apply text-[1rem] lg:text-[1.125rem] leading-7.5 tracking-normal;
+  @apply text-[1rem] lg:text-[1.125rem] leading-7.5 tracking-normal font-light;
 }
