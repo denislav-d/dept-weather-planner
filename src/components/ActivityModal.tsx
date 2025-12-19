@@ -69,15 +69,16 @@ export default function ActivityModal({ isOpen, onClose, activity, suitable }: A
 
 
         <div className="py-6 md:py-7.5 px-5 md:px-15 flex flex-col gap-y-5 md:max-w-4/5">
-          <h3 className="font-semibold">
+          {activity.title && <h3 className="font-semibold">
             {activity.title}
           </h3>
+          }
 
           <p className="bg-rose px-5 py-1 w-fit font-medium!">{suitable ? "You can do this event" : "You should not do this event"}</p>
 
-          {activity.minTemp && activity.maxTemp && <p className="font-medium!">You can do this activity between {activity.minTemp}° and {activity.maxTemp}°</p>}
+          {(activity.minTemp != null && activity.maxTemp != null) && <p className="font-medium!">You can do this activity between {activity.minTemp}° and {activity.maxTemp}°</p>}
 
-          <p className="text-gray-[#232323]">{activity.description}</p>
+          {activity.description && <p className="text-secondary-500">{activity.description}</p>}
 
           <button className="bg-black text-white px-5 py-4 w-fit font-medium! hover:bg-white hover:text-black transition-[color,background-color] duration-400 border border-black rounded-full cursor-pointer">View event</button>
         </div>

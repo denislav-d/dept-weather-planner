@@ -33,8 +33,8 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-y-5 col-span-full lg:col-span-5 mt-auto md:border-t md:border-t-[#e5e5e5] md:pt-4">
-            <h5 className="font-semibold">Want to get a daily forecast?</h5>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-y-5 col-span-full lg:col-span-5 mt-auto md:border-t md:border-t-secondary-50 md:pt-4">
+            <h4 className="font-semibold">Want to get a daily forecast?</h4>
 
             <div className="flex flex-col md:flex-row gap-y-5 gap-x-15">
                 <input

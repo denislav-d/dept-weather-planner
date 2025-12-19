@@ -11,7 +11,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main className="grid grid-cols-4 gap-x-3 md:grid-cols-12 grid-rows-3">
+    <main className="grid grid-cols-4 gap-x-3 md:grid-cols-12 grid-rows-2 md:grid-rows-3">
       <IntroductionSection />
       <ActivitiesSection weather={weather} activities={activities} />
       <ForecastSection forecast={forecast} />

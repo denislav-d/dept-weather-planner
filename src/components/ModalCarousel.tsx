@@ -20,6 +20,8 @@ export default function ModalCarousel({ images, activityTitle }: ModalCarouselPr
                 fill
                 className="object-cover origin-top"
                 sizes="(max-width: 1024px) 100vw, 1024px"
+                placeholder="blur"
+                blurDataURL={images[currentImageIndex]}
             />
 
             {images.length > 1 && (
