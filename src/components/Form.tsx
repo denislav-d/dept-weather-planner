@@ -33,7 +33,7 @@ export default function Form() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-y-5 col-span-full lg:col-span-5 md:border-t md:border-t-[#e5e5e5] md:pt-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-y-5 col-span-full lg:col-span-5 mt-auto md:border-t md:border-t-[#e5e5e5] md:pt-4">
             <h5 className="font-semibold">Want to get a daily forecast?</h5>
 
             <div className="flex flex-col md:flex-row gap-y-5 gap-x-15">
@@ -52,7 +52,7 @@ export default function Form() {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="rounded-full bg-black border border-black text-white hover:bg-white hover:text-black transition-[color,background-color,border-color] duration-400 py-4 px-5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="rounded-full bg-black border border-black text-white hover:bg-white hover:text-black transition-[color,background-color] duration-400 py-4 px-5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isSubmitting ? "Submitting..." : "Submit"}
                 </button>

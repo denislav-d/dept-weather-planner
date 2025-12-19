@@ -6,7 +6,7 @@ import Form from "./Form";
 
 export default function ForecastSection({ forecast }: { forecast: ForecastResponse }) {
     return (
-        <section className="col-span-full md:col-span-6 py-5 gap-y-14 grid grid-cols-6 max-md:px-5 gap-x-3 bg-[#F2F2F2] text-black md:pl-8 lg:pl-16 xl:pl-20 2xl:pl-32 row-span-1">
+        <section className="col-span-full md:col-span-6 py-5 gap-y-14 grid grid-cols-6 max-md:px-5 gap-x-3 bg-[#F2F2F2] text-black md:pl-8 lg:pl-16 xl:pl-20 2xl:pl-32 row-span-2">
             <div className="flex flex-col gap-y-6 pt-10 md:pt-24 col-span-full lg:col-span-5">
                 <h5 className="font-semibold">Upcoming 5 days</h5>
 
