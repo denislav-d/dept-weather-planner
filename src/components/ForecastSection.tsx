@@ -22,11 +22,10 @@ export default function ForecastSection({ forecast }: { forecast: ForecastRespon
                                     {day.minTemp && day.maxTemp && <p className="font-medium!">{day.metric === "CELCIUS" ? day.minTemp : FahrenheitToCelsius(day.minTemp)}° / <span className="font-semibold">{day.metric === "CELCIUS" ? day.maxTemp : FahrenheitToCelsius(day.maxTemp)}°</span></p>}
                                 </span>
 
-                                {day.precipitation && <span className="flex items-center gap-x-3 col-span-2">
+                                <span className="flex items-center gap-x-3 col-span-2">
                                     <Image src="precipitation-icon.svg" alt="Precipitation icon" width={12} height={12} />
                                     <p className="font-medium!" >{day.precipitation}mm</p>
                                 </span>
-                                }
 
                                 {day.windDirection && <span className="flex items-center col-span-1 mr-2 md:mr-4 lg:mr-2">
                                     <p className="font-medium!">{formatWindDirection(day.windDirection)}</p>
