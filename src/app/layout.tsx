@@ -12,6 +12,9 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "DEPT® Weather Planner",
   description: "DEPT® Weather Planner",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
