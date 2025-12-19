@@ -16,7 +16,7 @@ export default function ForecastSection({ forecast }: { forecast: ForecastRespon
                             {day.date && <h6 className="font-semibold md:col-span-1">{formatDate(day.date)}</h6>}
 
                             <div className="grid grid-cols-5 md:col-span-2">
-                                <span className="flex items-center gap-x-2 mr-6 col-span-2">
+                                <span className="flex items-center gap-x-2 mr-5 col-span-2">
                                     {day.condition.icon && <span aria-label={day.condition.description}>{formatWeatherIcon(day.condition.icon)}</span>}
 
                                     {day.minTemp && day.maxTemp && <p className="font-medium!">{day.metric === "CELCIUS" ? day.minTemp : FahrenheitToCelsius(day.minTemp)}° / <span className="font-semibold">{day.metric === "CELCIUS" ? day.maxTemp : FahrenheitToCelsius(day.maxTemp)}°</span></p>}

@@ -18,8 +18,8 @@ export default function ActivitiesSection({ weather, activities }: { weather: We
     });
 
     return (
-        <section className="col-span-full max-md:pb-12 md:py-7.5 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8 py-5 gap-y-7.5 md:gap-y-12.5 max-md:px-5 flex flex-col bg-white text-black max-md:order-last md:pr-8 lg:pr-16 xl:pr-20 2xl:pr-32 row-span-2 md:row-span-3">
-            <div className="bg-rose rounded-md col-span-full p-5 md:p-7.5 flex flex-col md:flex-row gap-y-2.5 gap-x-6 md:items-center">
+        <section className="col-span-full max-md:pb-12 md:py-7.5 md:col-span-6 lg:col-span-5 md:col-start-7 lg:col-start-8 py-5 gap-y-7.5 md:gap-y-12.5 max-md:px-5 flex flex-col bg-white text-black max-md:order-last md:pr-8 lg:pr-16 xl:pr-20 2xl:pr-32 md:row-span-3">
+            <div className="bg-rose rounded-md col-span-full p-5 md:p-7.5 flex flex-col md:flex-row gap-y-4 gap-x-6 md:items-center">
                 {temperature.metric && temperature.temp && (
                     <h2 className="font-semibold text-[4.5rem]!">{temperature.metric === "CELCIUS" ? temperature.temp : FahrenheitToCelsius(temperature.temp)}°</h2>
                 )}
