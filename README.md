@@ -1,1 +1,1 @@
-DEPT® Weather Planner - Frontend Intern Case
+DEPT® Weather Planner - Frontend Intern Case - Denislav Dimitrov
